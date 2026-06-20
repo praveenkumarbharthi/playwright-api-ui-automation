@@ -3,7 +3,7 @@
 # Manual · Performance · API Interview Guide
 ### Manual Testing (10+ yrs) · JMeter · Postman · API Testing
 
-*Companion to [LEARNING_GUIDE.md](LEARNING_GUIDE.md) and [INTERVIEW_GUIDE.md](INTERVIEW_GUIDE.md)*
+*Companion to [LEARNING_GUIDE.md](LEARNING_GUIDE.md) · [INTERVIEW_GUIDE.md](INTERVIEW_GUIDE.md) · [SENIOR_LEAD_INTERVIEW_GUIDE.md](SENIOR_LEAD_INTERVIEW_GUIDE.md)*
 
 </div>
 
