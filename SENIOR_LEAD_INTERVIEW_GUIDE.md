@@ -3,7 +3,7 @@
 # Senior / Lead QA Interview Guide
 ### Indian MNC Edition · Tech · Coding · Framework · Managerial · Behavioral
 
-*Companion to [LEARNING_GUIDE.md](LEARNING_GUIDE.md) · [INTERVIEW_GUIDE.md](INTERVIEW_GUIDE.md) · [QA_MANUAL_PERF_API_GUIDE.md](QA_MANUAL_PERF_API_GUIDE.md)*
+*Companion to [LEARNING_GUIDE.md](LEARNING_GUIDE.md) · [INTERVIEW_GUIDE.md](INTERVIEW_GUIDE.md) · [COMPANY_WISE_INTERVIEW_GUIDE.md](COMPANY_WISE_INTERVIEW_GUIDE.md) · [QA_MANUAL_PERF_API_GUIDE.md](QA_MANUAL_PERF_API_GUIDE.md)*
 
 **~90 questions with answers** for **Senior SDET / Test Lead / QA Lead / Test Manager** roles
 targeting TCS, Infosys, Wipro, Cognizant, Accenture, Capgemini, HCL, Tech Mahindra,
