@@ -819,6 +819,104 @@ language.
 *Good luck — you've got this. Speak with calm confidence, back claims with examples, and remember:
 a senior/lead role is judged as much on **judgment and communication** as on technical depth.*
 
+---
+
+# Section 10 — Extra Question Bank (rapid, high-yield)
+
+## 10.1 More Coding / Logic
+
+1. **Remove duplicates from an array.** → `[...new Set(arr)]` (O(n)); explain Set-based dedupe.
+2. **Check if a string is a palindrome.** → Two-pointer compare from both ends, O(n).
+3. **Find the missing number in 1..n.** → Sum formula `n(n+1)/2` minus actual sum, O(n).
+4. **Count vowels/consonants in a string.** → Single pass with a vowel set lookup.
+5. **Reverse words in a sentence.** → Split on spaces → reverse array → join.
+6. **Find max occurring character.** → Frequency map, track the max as you go.
+7. **Fibonacci series.** → Iterative with two variables (O(n)), mention memoization vs recursion.
+8. **Swap two numbers without a temp variable.** → Destructuring `[a,b]=[b,a]` or arithmetic.
+9. **Merge two sorted arrays.** → Two-pointer merge, O(n+m).
+10. **Two-sum (pair with a target).** → Hashmap of seen complements, O(n).
+11. **Find common elements in two arrays.** → Put one in a Set, filter the other.
+12. **Sort a map by value.** → `Object.entries().sort()` then rebuild.
+13. **Flatten a nested array.** → `arr.flat(Infinity)` or recursion.
+14. **Count words in a string** → split on whitespace, filter empties.
+15. **Check balanced parentheses.** → Stack: push open, pop on close, must end empty.
+
+## 10.2 More Selenium / Automation
+
+16. **Explain different Selenium locators.** → id, name, className, tagName, linkText,
+    partialLinkText, CSS, XPath.
+17. **CSS selector vs XPath — which is faster?** → CSS is generally faster and more readable;
+    XPath supports traversal (parent/ancestor) and text matching.
+18. **Absolute vs relative XPath?** → Absolute (`/html/body/...`) is brittle; relative (`//div
+    [@id]`) is preferred.
+19. **How to handle a dropdown?** → `Select` class (selectByVisibleText/Value/Index) for `<select>`;
+    custom dropdowns via click + option locator.
+20. **How to handle a calendar/date picker?** → Navigate months via buttons and click the day, or
+    inject the value if the field allows.
+21. **How to handle web tables?** → Locate rows/cells via XPath indices or CSS, iterate, assert.
+22. **How to take a screenshot?** → `TakesScreenshot` in Selenium; `page.screenshot()` in
+    Playwright.
+23. **Difference: `findElement` vs `findElements`?** → Single element (throws if absent) vs a list
+    (empty if none).
+24. **What is the Actions class?** → For mouse/keyboard interactions — hover, drag-drop,
+    right-click, double-click.
+25. **What is the Page Factory?** → A Selenium POM helper using `@FindBy` + `initElements` for lazy
+    element init.
+26. **StaleElementReferenceException — cause and fix?** → The DOM re-rendered; re-locate the
+    element (don't cache stale references).
+27. **How to scroll to an element?** → `scrollIntoView` via JS executor, or Playwright auto-scrolls.
+28. **How to handle SSL certificate errors?** → Browser options/capabilities to accept insecure
+    certs.
+29. **Headless vs headed?** → Headless runs without UI (faster, CI); headed shows the browser
+    (debugging).
+30. **How to run cross-browser tests?** → Config-driven browser matrix + Grid/Playwright projects.
+
+## 10.3 More Framework / Design
+
+31. **How do you structure reusable components (header, modal)?** → Component objects shared across
+    pages, composed into page objects.
+32. **How do you implement logging?** → A logger utility with levels (info/warn/error); see
+    [logger.ts](src/utils/logger.ts).
+33. **How do you implement retries safely?** → Config-level retries for true externalities; never
+    to mask real bugs.
+34. **How do you version and review test code?** → Git + PRs + code review + linting in CI;
+    treat test code as production code.
+35. **How do you onboard a new tester to the framework?** → README, examples, conventions, pairing,
+    a "write your first test" walkthrough.
+36. **How do you measure automation success?** → Coverage %, escaped defects, regression time saved,
+    suite stability, ROI.
+37. **How do you handle test environments and data refresh?** → Dedicated env, seeded data via API,
+    cleanup in teardown, masked production-like data.
+38. **Monorepo vs separate test repo?** → Monorepo keeps tests close to code (synced changes);
+    separate repo decouples but risks drift.
+39. **How do you handle config across dev/QA/staging/prod?** → Externalized per-env config selected
+    by an env variable; no hard-coding.
+40. **How do you keep a 2000-test suite maintainable?** → Conventions, shared components, ownership,
+    flaky-test policy, regular pruning of redundant tests.
+
+## 10.4 More Managerial / Behavioral
+
+41. **How do you prioritize when everything is "P1"?** → Risk × business impact; force-rank with
+    stakeholders; make trade-offs explicit.
+42. **How do you handle scope creep mid-sprint?** → Raise it, quantify impact on timeline/quality,
+    let the PO re-prioritize the backlog.
+43. **A release slipped due to QA. How do you handle the retro?** → Own it, root-cause without blame,
+    add a concrete process/test gate, track the fix.
+44. **How do you give difficult feedback?** → Privately, specific + behavior-based, with examples
+    and a path forward; balance with recognition.
+45. **How do you keep a remote/distributed team aligned?** → Clear written goals, async updates,
+    regular syncs, shared dashboards, documented decisions.
+46. **How do you influence without authority?** → Data, relationships, and framing in terms of the
+    other person's goals; build credibility through reliability.
+47. **Describe a time you automated something that saved significant effort.** → STAR with a metric
+    (e.g., 3-day regression → 3 hours).
+48. **How do you stay calm during a production incident?** → Focus on facts → impact → mitigation →
+    communicate → retrospect; emotions don't fix outages.
+49. **What's your leadership style?** → Servant-leadership: unblock the team, set direction, coach,
+    own outcomes, give credit.
+50. **Why should we hire you for this lead role?** → Tie your technical depth + delivery record +
+    people leadership directly to their stated needs.
+
 [⬆ Back to top](#senior--lead-qa-interview-guide)
 
 </div>

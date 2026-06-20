@@ -638,6 +638,80 @@ load, checkout exceeds the 3s SLA — recommend scaling before the sale."
 *Master the difference between **load vs stress**, **correlation vs parameterization**, and
 **average vs 95th percentile** — those three comparisons appear in almost every MNC interview.*
 
+---
+
+# Section 9 — Extra Question Bank (rapid, high-yield)
+
+## 9.1 More API Testing
+
+1. **What is the difference between path and query parameters?** → Path identifies a resource
+   (`/users/5`); query filters/sorts (`?sort=name`).
+2. **What is an idempotent request?** → Repeating it yields the same result (GET, PUT, DELETE).
+3. **What is HATEOAS?** → REST responses include links to related actions/resources.
+4. **What is content negotiation?** → Client/server agree on format via `Accept`/`Content-Type`
+   headers.
+5. **What is CORS?** → Browser security controlling cross-origin requests via response headers.
+6. **What is the difference between authentication and authorization?** → Who you are vs what you're
+   allowed to do.
+7. **How do you test pagination?** → Validate page size, navigation links, total counts, and
+   boundaries (first/last/empty page).
+8. **How do you test sorting and filtering?** → Verify the returned order/subset matches the
+   params, including invalid params.
+9. **How do you validate response time in API tests?** → Assert it's within the SLA threshold.
+10. **What is a 204 vs 200?** → 204 = success with no body; 200 = success with a body.
+11. **What is a 502 vs 503 vs 504?** → Bad Gateway / Service Unavailable / Gateway Timeout.
+12. **How do you handle dynamic/auth tokens in automated API tests?** → Fetch in setup, store, inject
+    into headers; refresh on expiry.
+13. **What is request chaining?** → Using output of one request as input to the next (correlation).
+14. **How do you test file upload via API?** → multipart/form-data request with the file payload;
+    assert the stored result.
+15. **What is throttling/rate limiting at the API level?** → Capping requests; expect 429 + retry
+    headers when exceeded.
+16. **How do you ensure API tests are independent?** → Isolated data, setup/teardown per test, no
+    shared mutable state.
+17. **What is the difference between stubbing and mocking?** → Stub returns canned data; mock also
+    verifies interactions/expectations.
+18. **How do you test error handling?** → Send invalid/missing/oversized payloads, assert correct
+    codes + clear messages.
+
+## 9.2 More Performance / JMeter
+
+19. **What is baseline vs benchmark testing?** → Baseline = reference run for comparison; benchmark =
+    compare against a standard/competitor.
+20. **What is capacity testing?** → Finding the max load the system can handle within SLA.
+21. **What is the difference between vertical and horizontal scaling?** → Bigger machine vs more
+    machines.
+22. **What is a synchronizing timer in JMeter?** → Holds threads then releases them together to
+    create a spike.
+23. **What is a constant throughput timer?** → Controls requests/minute to hit a target TPS.
+24. **What is a transaction controller?** → Groups samplers to measure them as one business
+    transaction.
+25. **What is the difference between a sampler and a controller?** → Sampler sends a request;
+    controller manages flow/logic.
+26. **What is distributed testing in JMeter?** → A master controls multiple slave load generators.
+27. **How do you parameterize logins for 1000 users?** → CSV Data Set Config with unique credentials
+    per thread.
+28. **What is a BeanShell/JSR223 sampler?** → Scripting element for custom logic (JSR223 + Groovy is
+    preferred for performance).
+29. **What does a sudden drop in throughput under increasing load indicate?** → A saturated
+    bottleneck (DB, pool, CPU) — the system is past its limit.
+30. **What is error % and the acceptable threshold?** → Failed requests ÷ total; typically must stay
+    under ~1%.
+31. **What server metrics do you monitor during a run?** → CPU, memory, GC, disk I/O, network, DB
+    connections, thread pools.
+32. **What is correlation failure and how do you spot it?** → Hard-coded dynamic values cause
+    auth/session errors (4xx/5xx) under load.
+33. **What is the difference between response time and TTFB?** → TTFB = time to first byte;
+    response time = full response received.
+34. **How do you decide test duration for a soak test?** → Long enough to reveal leaks/degradation —
+    typically several hours to overnight.
+35. **What tools complement JMeter for monitoring?** → Grafana + InfluxDB (live dashboards), APM
+    (New Relic/Dynatrace), server agents.
+
+---
+
+<div align="center">
+
 [⬆ Back to top](#api--performance-testing--interview-guide)
 
 </div>

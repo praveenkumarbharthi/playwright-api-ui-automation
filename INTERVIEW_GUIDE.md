@@ -1044,6 +1044,105 @@ reference similar apps, use the app to infer intent, and document findings as yo
 
 ---
 
+---
+
+# Section 17 — Extra Question Bank (rapid, high-yield)
+
+> Short Q → answer format to maximize coverage. Read the question, answer aloud, then check.
+
+## 17.1 TypeScript / JavaScript
+
+1. **`let` vs `const` vs `var`?** → `var` is function-scoped + hoisted; `let`/`const` are
+   block-scoped; `const` can't be reassigned (but objects are still mutable).
+2. **`==` vs `===`?** → `==` coerces types; `===` checks value **and** type. Always use `===`.
+3. **What is hoisting?** → Declarations are moved to the top of their scope; `var` is hoisted as
+   `undefined`, `let`/`const` are in the temporal dead zone until declared.
+4. **What is a closure?** → A function that remembers variables from its outer scope even after
+   that scope has returned. Used for data privacy and factories.
+5. **`null` vs `undefined`?** → `undefined` = not assigned; `null` = intentional empty value.
+6. **What is the event loop?** → JS is single-threaded; the event loop processes the call stack,
+   then microtasks (promises), then macrotasks (timers) — enabling async without blocking.
+7. **`map` vs `forEach`?** → `map` returns a new array; `forEach` returns nothing (side effects).
+8. **`Promise` vs `async/await`?** → `async/await` is syntactic sugar over promises; cleaner,
+   reads synchronously, use `try/catch` for errors.
+9. **What is `Promise.all` vs `Promise.race`?** → `all` waits for all (fails if any rejects);
+   `race` resolves/rejects with the first to settle.
+10. **`interface` vs `type`?** → Both describe shapes; `interface` is extendable/mergeable, `type`
+    supports unions/intersections/primitives.
+11. **What are generics?** → Reusable type parameters (`<T>`) that keep type safety across
+    different types — e.g., `Array<T>`, a generic API client.
+12. **What is `enum`?** → A named set of constants improving readability over magic values.
+13. **What does `?.` (optional chaining) do?** → Safely accesses nested properties; returns
+    `undefined` instead of throwing if a link is null/undefined.
+14. **What is `??` (nullish coalescing)?** → Returns the right side only if the left is
+    `null`/`undefined` (unlike `||`, which also triggers on `0`/`""`).
+15. **`spread` vs `rest`?** → Same `...` syntax; spread expands an array/object, rest collects
+    arguments into an array.
+16. **`slice` vs `splice`?** → `slice` returns a copy (non-mutating); `splice` changes the array.
+17. **What is `this` in JS?** → The calling context; arrow functions inherit `this` from the
+    enclosing scope (no own `this`).
+18. **What is destructuring?** → Unpacking values from arrays/objects into variables
+    (`const {a, b} = obj`).
+19. **Shallow vs deep copy?** → Shallow copies top-level refs; deep copy clones nested objects
+    (`structuredClone` / `JSON.parse(JSON.stringify())`).
+20. **What is type narrowing?** → Using `typeof`/`instanceof`/checks so TS knows a more specific
+    type within a branch.
+
+## 17.2 Playwright
+
+21. **What is the difference between `page` and `context`?** → A `BrowserContext` is an isolated
+    session (like an incognito profile); a `page` is a tab inside it.
+22. **How do you achieve test isolation?** → Each test gets a fresh context → no shared cookies/
+    storage; enables safe parallelism.
+23. **`locator` vs `$`/`page.$`?** → `locator` is lazy and auto-retries; `$` resolves once
+    immediately (legacy, avoid).
+24. **How do you wait for an API response?** → `page.waitForResponse(url/predicate)` or assert on
+    a locator that appears after the call.
+25. **How do you mock network requests?** → `page.route()` to intercept and fulfill/abort/modify
+    requests — great for negative cases and isolation.
+26. **What is `expect` auto-retrying?** → Web-first assertions (`toBeVisible`, `toHaveText`) retry
+    until the timeout — no manual waits.
+27. **How do you run tests in parallel?** → Playwright runs files in parallel across workers; use
+    `test.describe.configure({ mode: 'parallel' })` within a file.
+28. **What is a fixture?** → A reusable setup/teardown unit injected into tests (DI); see
+    [src/fixtures/index.ts](src/fixtures/index.ts).
+29. **How do you handle authentication once for many tests?** → Save storage state after login
+    (`storageState`) and reuse it, skipping repeated logins.
+30. **What is trace viewer?** → A post-run debugging tool showing DOM snapshots, actions, network,
+    and console for each step — invaluable for flaky failures.
+31. **How do you test file upload/download?** → `setInputFiles()` for upload; `waitForEvent
+    ('download')` for download.
+32. **How do you handle multiple tabs/popups?** → `context.waitForEvent('page')` to capture the
+    new page object.
+33. **How do you do visual/screenshot testing?** → `expect(page).toHaveScreenshot()` compares
+    against a baseline image.
+34. **What reporters does Playwright support?** → list, line, dot, HTML, JUnit, JSON, plus Allure
+    via plugin.
+35. **How do you retry only failed tests?** → `retries` in config; combine with `--last-failed`.
+
+## 17.3 Framework & General
+
+36. **Why Page Object Model?** → Separates UI structure from test logic → maintainable, reusable,
+    readable.
+37. **Where should assertions live?** → In tests, not page objects (page objects return data/
+    state).
+38. **How do you keep tests independent?** → No shared state, isolated data, set up prerequisites
+    per test, clean up after.
+39. **How do you manage environments?** → Config keyed by env var; see
+    [config/environments.ts](config/environments.ts).
+40. **How do you store secrets?** → Env vars / secrets manager, never committed; `.env.example`
+    lists placeholders.
+41. **What makes a good test?** → Independent, deterministic, fast, readable, single clear purpose,
+    reliable assertions.
+42. **How do you reduce flakiness?** → Stable locators, auto-waits (no `sleep`), data isolation,
+    retries only for true externalities.
+43. **What is the test pyramid?** → Many unit, fewer API, few UI — fast feedback, stable suite.
+44. **How do you integrate with CI?** → Run on PR, smoke fast, full nightly, publish reports, gate
+    merge.
+45. **What is data-driven testing?** → One script, many data sets from an external source.
+
+---
+
 <div align="center">
 
 *Back to the main guide → [LEARNING_GUIDE.md](LEARNING_GUIDE.md)*

@@ -888,6 +888,108 @@ and align automation vs manual split with the team and timeline.
 
 ---
 
+---
+
+# Section G — Extra Question Bank (rapid, high-yield)
+
+## G.1 More Manual / QA Theory
+
+1. **Verification vs Validation?** → Verification = "are we building it right?" (reviews); Validation
+   = "did we build the right thing?" (testing).
+2. **QA vs QC vs Testing?** → QA = process (prevention); QC = product (detection); Testing = the QC
+   activity of finding defects.
+3. **Severity vs Priority?** → Severity = technical impact; Priority = business urgency.
+4. **Smoke vs Sanity?** → Smoke = broad shallow build-stability check; Sanity = narrow deep check of
+   a specific fix/area.
+5. **Retesting vs Regression?** → Retesting confirms a specific fix; regression checks nothing else
+   broke.
+6. **Positive vs Negative testing?** → Valid inputs (should pass) vs invalid inputs (should be
+   handled gracefully).
+7. **Static vs Dynamic testing?** → Static = no execution (reviews, walkthroughs); dynamic = running
+   the software.
+8. **What is a test case vs test scenario?** → Scenario = what to test (high level); test case =
+   detailed steps + data + expected result.
+9. **What is RTM (Requirement Traceability Matrix)?** → Maps requirements ↔ test cases to ensure full
+   coverage.
+10. **What is exploratory testing?** → Simultaneous learning, test design, and execution without
+    pre-scripted cases.
+11. **What is ad-hoc testing?** → Informal, unstructured testing without documentation.
+12. **What is monkey/gorilla testing?** → Random inputs (monkey) vs intensely testing one module
+    repeatedly (gorilla).
+13. **What is usability testing?** → Evaluating ease of use from a real-user perspective.
+14. **What is accessibility testing?** → Ensuring the app works for users with disabilities (WCAG,
+    screen readers).
+15. **What is compatibility testing?** → Across browsers, devices, OS, resolutions.
+16. **What is localization vs globalization testing?** → Localization = specific locale (language,
+    currency); globalization = works across all locales.
+17. **What is the defect life cycle?** → New → Assigned → Open → Fixed → Retest → Closed (or
+    Reopened/Deferred/Rejected/Duplicate).
+18. **What is defect leakage?** → Defects that escaped to a later stage / production.
+19. **What is defect density?** → Defects per size unit (per KLOC / per module).
+20. **What is a test harness?** → The tools/stubs/drivers set up to run tests.
+
+## G.2 More Agile / Process
+
+21. **What are the Scrum ceremonies?** → Sprint planning, daily stand-up, sprint review, retro
+    (+ backlog refinement).
+22. **What is a user story and INVEST?** → A small unit of value; Independent, Negotiable, Valuable,
+    Estimable, Small, Testable.
+23. **What are acceptance criteria?** → Conditions a story must meet to be "done" — the basis for
+    test cases.
+24. **What is Definition of Done (DoD)?** → A shared checklist (coded, tested, automated, reviewed,
+    documented) before a story is complete.
+25. **What is velocity?** → Story points completed per sprint — used for planning, not as a
+    performance metric.
+26. **What is a burndown chart?** → Remaining work vs time within a sprint.
+27. **Agile vs Waterfall?** → Iterative/incremental + adaptive vs sequential + plan-driven.
+28. **What is shift-left testing?** → Testing earlier in the lifecycle to catch defects sooner/
+    cheaper.
+29. **What is CI/CD in QA terms?** → Automated build + test on every change (CI), automated release
+    pipeline (CD).
+30. **What is a spike in Agile?** → A time-boxed research task to reduce uncertainty.
+
+## G.3 More JMeter / Performance
+
+31. **Load vs stress vs soak vs spike?** → Expected peak / breaking point / long duration / sudden
+    surge.
+32. **What is ramp-up in JMeter?** → Time to start all threads gradually (realistic growth).
+33. **What is correlation?** → Capturing a dynamic server value (token/session) and reusing it via
+    an extractor.
+34. **What is parameterization?** → Feeding input data from a CSV Data Set so users are unique.
+35. **Why run JMeter in non-GUI mode?** → GUI distorts results under load; headless `-n` is for real
+    runs.
+36. **What are listeners and why avoid heavy ones under load?** → They collect results; View Results
+    Tree is memory-heavy — debug only.
+37. **Which percentile matters and why?** → 90/95th — reflects real worst-case UX better than the
+    average.
+38. **What is throughput?** → Requests/transactions handled per second.
+39. **What is a bottleneck?** → The resource that saturates first and caps performance.
+40. **How do you simulate think time?** → Timers (Constant/Gaussian) between requests.
+
+## G.4 More Postman / API
+
+41. **What is a Postman collection?** → A saved group of requests, organizable into folders, runnable
+    in sequence.
+42. **What are Postman environments/variables?** → Key-value sets (base URL, tokens) to switch
+    between dev/QA/prod.
+43. **How do you write tests in Postman?** → JS in the Tests tab using `pm.test()` +
+    `pm.response.to.have.status(200)`.
+44. **How do you chain requests in Postman?** → Save a response value via `pm.environment.set()` and
+    use `{{var}}` in the next request.
+45. **What is Newman?** → Postman's CLI runner for executing collections in CI.
+46. **What is a pre-request script?** → JS that runs before a request (e.g., generate a timestamp or
+    token).
+47. **How do you validate a JSON schema in Postman?** → `pm.response.to.have.jsonSchema(schema)`.
+48. **How do you do data-driven runs in Postman?** → Collection Runner with a CSV/JSON data file.
+49. **What are the common HTTP status codes to assert?** → 200, 201, 400, 401, 403, 404, 500.
+50. **How do you handle authentication in Postman?** → Auth tab (Bearer/Basic/OAuth) or set the
+    Authorization header manually.
+
+> Want the deepest API + performance set? See
+> [API_PERFORMANCE_TESTING_GUIDE.md](API_PERFORMANCE_TESTING_GUIDE.md).
+
+---
+
 <div align="center">
 
 *Companion guides → [LEARNING_GUIDE.md](LEARNING_GUIDE.md) · [INTERVIEW_GUIDE.md](INTERVIEW_GUIDE.md)*
