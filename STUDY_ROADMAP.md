@@ -194,6 +194,7 @@ in 3 minutes.
 |-------|---------|
 | [LEARNING_GUIDE.md](LEARNING_GUIDE.md) | Learn TypeScript + the framework from scratch |
 | [QA_MANUAL_PERF_API_GUIDE.md](QA_MANUAL_PERF_API_GUIDE.md) | Manual testing, JMeter, Postman, API theory |
+| [API_PERFORMANCE_TESTING_GUIDE.md](API_PERFORMANCE_TESTING_GUIDE.md) | Deep-dive: API + JMeter + load/performance (top MNC Q&A) |
 | [INTERVIEW_GUIDE.md](INTERVIEW_GUIDE.md) | Core + senior Playwright/TS interview Q&A |
 | [SENIOR_LEAD_INTERVIEW_GUIDE.md](SENIOR_LEAD_INTERVIEW_GUIDE.md) | Senior/Lead Q&A (coding, design, managerial) |
 | [COMPANY_WISE_INTERVIEW_GUIDE.md](COMPANY_WISE_INTERVIEW_GUIDE.md) | Company-by-company patterns & questions |
